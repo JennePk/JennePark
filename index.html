@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Japan on a Budget — Free Ebook for Gen Z Travelers</title>
+  <meta name="description" content="Get your free ebook: 7 nights in Japan on a tiny budget. Itinerary, tips, cheap stays & more for Gen Z backpackers." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <style>
+    /* ── RESET & TOKENS ────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red:     #E63946;
+      --pink:    #FF6B9D;
+      --cream:   #FFF8F0;
+      --dark:    #0F0F1A;
+      --dark2:   #1A1A2E;
+      --gray:    #6B7280;
+      --light:   #F9FAFB;
+      --gold:    #FFD700;
+      --teal:    #0EA5E9;
+      --white:   #ffffff;
+      --radius:  16px;
+      --font-head: 'Syne', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--dark);
+      color: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* ── NOISE TEXTURE OVERLAY ─────────────────────────────────── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.4;
+    }
+
+    /* ── NAV ───────────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      background: rgba(15,15,26,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav-logo {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--red);
+      letter-spacing: -0.02em;
+    }
+    .nav-logo span { color: var(--white); }
+    .nav-cta {
+      background: var(--red);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 0.85rem;
+      padding: 0.5rem 1.2rem;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(230,57,70,0.4); }
+
+    /* ── HERO ──────────────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6rem 2rem 4rem;
+      overflow: hidden;
+    }
+
+    /* Decorative blobs */
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(230,57,70,0.18) 0%, transparent 70%);
+      top: -100px; right: -100px;
+      pointer-events: none;
+    }
+    .blob-2 {
+      position: absolute;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(14,165,233,0.12) 0%, transparent 70%);
+      bottom: 50px; left: -80px;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,215,0,0.12);
+      border: 1px solid rgba(255,215,0,0.3);
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 500;
+      padding: 0.35rem 0.9rem;
+      border-radius: 100px;
+      margin-bottom: 1.2rem;
+      letter-spacing: 0.04em;
+      animation: fadeSlideUp 0.6s ease both;
+    }
+
+    .hero-title {
+      font-family: var(--font-head);
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      animation: fadeSlideUp 0.6s 0.1s ease both;
+    }
+    .hero-title .accent { color: var(--red); }
+    .hero-title .accent2 { color: var(--pink); }
+
+    .hero-sub {
+      margin-top: 1.2rem;
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.65;
+      animation: fadeSlideUp 0.6s 0.2s ease both;
+    }
+
+    .hero-bullets {
+      margin-top: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      animation: fadeSlideUp 0.6s 0.3s ease both;
+    }
+    .bullet {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.8);
+    }
+    .bullet-icon {
+      width: 28px; height: 28px;
+      background: rgba(230,57,70,0.15);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .hero-cta-group {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      animation: fadeSlideUp 0.6s 0.4s ease both;
+    }
+    .btn-primary {
+      background: var(--red);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0.85rem 2rem;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(230,57,70,0.45); }
+    .btn-ghost {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.92rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      transition: color 0.2s;
+    }
+    .btn-ghost:hover { color: var(--white); }
+
+    /* ── EBOOK MOCKUP ──────────────────────────────────────────── */
+    .ebook-wrap {
+      position: relative;
+      animation: fadeSlideUp 0.6s 0.2s ease both;
+    }
+    .ebook-card {
+      background: linear-gradient(135deg, #1A1A2E 0%, #16213E 50%, #0F3460 100%);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 40px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.04);
+      position: relative;
+      overflow: hidden;
+    }
+    .ebook-card::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 180px; height: 180px;
+      background: radial-gradient(circle, rgba(230,57,70,0.25), transparent 70%);
+    }
+    .ebook-flag {
+      font-size: 3rem;
+      margin-bottom: 0.8rem;
+      display: block;
+    }
+    .ebook-card-title {
+      font-family: var(--font-head);
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.2;
+    }
+    .ebook-card-title span { color: var(--red); }
+    .ebook-card-sub {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.5);
+      margin-top: 0.4rem;
+    }
+    .ebook-divider {
+      height: 1px;
+      background: rgba(255,255,255,0.08);
+      margin: 1.4rem 0;
+    }
+    .ebook-chapters {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .chapter-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.7);
+    }
+    .chapter-num {
+      width: 22px; height: 22px;
+      background: rgba(230,57,70,0.2);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--red);
+      flex-shrink: 0;
+    }
+    .ebook-free-tag {
+      position: absolute;
+      top: 1.2rem; right: 1.2rem;
+      background: var(--gold);
+      color: var(--dark);
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 0.75rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 100px;
+      letter-spacing: 0.06em;
+    }
+    .ebook-pages-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 1.2rem;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.6);
+      font-size: 0.78rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: 100px;
+    }
+
+    /* ── SECTION WRAPPER ───────────────────────────────────────── */
+    section {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── STATS STRIP ───────────────────────────────────────────── */
+    .stats-strip {
+      background: rgba(255,255,255,0.03);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 2rem;
+    }
+    .stats-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      text-align: center;
+    }
+    .stat-num {
+      font-family: var(--font-head);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--red);
+    }
+    .stat-label {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.5);
+      margin-top: 0.3rem;
+    }
+
+    /* ── ABOUT AUTHOR ──────────────────────────────────────────── */
+    .about {
+      padding: 5rem 2rem;
+    }
+    .about-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .author-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      padding: 2rem;
+      text-align: center;
+    }
+    .author-avatar {
+      width: 80px; height: 80px;
+      background: linear-gradient(135deg, var(--red), var(--pink));
+      border-radius: 50%;
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+    }
+    .author-name {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    .author-tag {
+      font-size: 0.8rem;
+      color: var(--pink);
+      margin-top: 0.3rem;
+    }
+    .author-bio {
+      margin-top: 0.8rem;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.6;
+    }
+    .section-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: var(--red);
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+    .section-title {
+      font-family: var(--font-head);
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+    .section-body {
+      margin-top: 1rem;
+      font-size: 0.98rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.7;
+    }
+
+    /* ── WHAT'S INSIDE ─────────────────────────────────────────── */
+    .inside {
+      padding: 5rem 2rem;
+      background: rgba(255,255,255,0.015);
+    }
+    .inside-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .inside-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .chapters-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    .ch-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .ch-card:hover {
+      border-color: rgba(230,57,70,0.35);
+      transform: translateY(-2px);
+    }
+    .ch-emoji { font-size: 1.8rem; margin-bottom: 0.8rem; display: block; }
+    .ch-title {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--white);
+    }
+    .ch-desc {
+      margin-top: 0.4rem;
+      font-size: 0.84rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.55;
+    }
+    .ch-topics {
+      margin-top: 0.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .topic-tag {
+      background: rgba(230,57,70,0.12);
+      border: 1px solid rgba(230,57,70,0.2);
+      color: rgba(255,255,255,0.65);
+      font-size: 0.72rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 100px;
+    }
+
+    /* ── DOWNLOAD SECTION ──────────────────────────────────────── */
+    .download {
+      padding: 5rem 2rem;
+    }
+    .download-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .download-box {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      padding: 3rem 2.5rem;
+      margin-top: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .download-box::before {
+      content: '';
+      position: absolute;
+      top: -80px; left: 50%;
+      transform: translateX(-50%);
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(230,57,70,0.12), transparent 70%);
+      pointer-events: none;
+    }
+
+    /* Google Form embed */
+    .form-wrap {
+      margin-top: 1.5rem;
+    }
+    .form-wrap iframe {
+      width: 100%;
+      border: none;
+      border-radius: 12px;
+      min-height: 400px;
+    }
+
+    /* Fallback form style */
+    .custom-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      text-align: left;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 0.4rem;
+      font-weight: 500;
+    }
+    .form-group input {
+      width: 100%;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-group input::placeholder { color: rgba(255,255,255,0.3); }
+    .form-group input:focus { border-color: var(--red); }
+    .submit-btn {
+      background: var(--red);
+      color: var(--white);
+      border: none;
+      border-radius: 100px;
+      padding: 0.9rem 2rem;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      width: 100%;
+      transition: transform 0.2s, box-shadow 0.2s;
+      margin-top: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(230,57,70,0.45); }
+    .form-note {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.35);
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+
+    /* ── SUCCESS / DOWNLOAD PAGE ───────────────────────────────── */
+    .download-success {
+      display: none;
+      text-align: center;
+      padding: 2rem 0;
+    }
+    .success-icon {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+    }
+    .success-title {
+      font-family: var(--font-head);
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+    .success-sub {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.6);
+      margin-top: 0.6rem;
+      line-height: 1.6;
+    }
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 1.8rem;
+      background: linear-gradient(135deg, var(--red), var(--pink));
+      color: var(--white);
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1.05rem;
+      padding: 1rem 2.2rem;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 8px 30px rgba(230,57,70,0.35);
+    }
+    .download-btn:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(230,57,70,0.5); }
+
+    /* ── FOOTER ────────────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.3);
+    }
+    footer a { color: var(--red); text-decoration: none; }
+
+    /* ── ANIMATIONS ────────────────────────────────────────────── */
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── RESPONSIVE ────────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .ebook-wrap { order: -1; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .about-inner { grid-template-columns: 1fr; }
+      .chapters-grid { grid-template-columns: 1fr; }
+      .download-box { padding: 2rem 1.5rem; }
+      nav { padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ──────────────────────────────────────────────────────── -->
+  <nav>
+    <div class="nav-logo">🇯🇵 <span>JapanOnABudget</span></div>
+    <a href="#download" class="nav-cta">Get Free Ebook ↓</a>
+  </nav>
+
+  <!-- ── HERO ─────────────────────────────────────────────────────── -->
+  <section class="hero" id="home">
+    <div class="blob-2"></div>
+    <div class="hero-inner">
+      <!-- Left: text -->
+      <div>
+        <div class="hero-badge">✨ 100% Free — No Credit Card</div>
+        <h1 class="hero-title">
+          Japan on a<br>
+          <span class="accent">Tiny Budget</span><br>
+          <span class="accent2">7 Nights.</span> Real Tips.
+        </h1>
+        <p class="hero-sub">
+          The Gen Z backpacker's guide to Japan — written by a 23-year-old who saved up from a grocery store job to make it happen. 🌸
+        </p>
+        <div class="hero-bullets">
+          <div class="bullet"><div class="bullet-icon">🗾</div> 7-night itinerary (Tokyo → Kyoto → Osaka)</div>
+          <div class="bullet"><div class="bullet-icon">💸</div> Full budget breakdown — from ~1,100€</div>
+          <div class="bullet"><div class="bullet-icon">🏨</div> Capsule hotels, hostels & Airbnb picks</div>
+          <div class="bullet"><div class="bullet-icon">🎋</div> Ghibli spots, temples & hidden gems</div>
+          <div class="bullet"><div class="bullet-icon">🚆</div> Transport hacks — IC card & cheap trains</div>
+        </div>
+        <div class="hero-cta-group">
+          <a href="#download" class="btn-primary">🎁 Get the Free Ebook</a>
+          <a href="#inside" class="btn-ghost">See what's inside →</a>
+        </div>
+      </div>
+      <!-- Right: ebook mockup -->
+      <div class="ebook-wrap">
+        <div class="ebook-card">
+          <div class="ebook-free-tag">FREE</div>
+          <span class="ebook-flag">🇯🇵</span>
+          <div class="ebook-card-title">Japan on a<br><span>Budget</span></div>
+          <div class="ebook-card-sub">The GenZ Franglais Guide — 2025 Edition</div>
+          <div class="ebook-divider"></div>
+          <div class="ebook-chapters">
+            <div class="chapter-row"><div class="chapter-num">1</div> What's in my bag?</div>
+            <div class="chapter-row"><div class="chapter-num">2</div> Where to go? 7-night itinerary</div>
+            <div class="chapter-row"><div class="chapter-num">3</div> Budget hotels & capsule stays</div>
+            <div class="chapter-row"><div class="chapter-num">4</div> Solo travel tips & etiquette</div>
+            <div class="chapter-row"><div class="chapter-num">+</div> Budget calculator & apps</div>
+          </div>
+          <div class="ebook-pages-badge">📄 30+ pages &nbsp;•&nbsp; 🗺️ Full itinerary included</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STATS STRIP ───────────────────────────────────────────── -->
+  <section class="stats-strip">
+    <div class="stats-inner">
+      <div>
+        <div class="stat-num">7</div>
+        <div class="stat-label">Nights covered</div>
+      </div>
+      <div>
+        <div class="stat-num">~1,100€</div>
+        <div class="stat-label">Minimum budget</div>
+      </div>
+      <div>
+        <div class="stat-num">30+</div>
+        <div class="stat-label">Tips & hacks</div>
+      </div>
+      <div>
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Free to download</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT AUTHOR ──────────────────────────────────────────── -->
+  <section class="about">
+    <div class="about-inner">
+      <div class="author-card">
+        <div class="author-avatar">👩</div>
+        <div class="author-name">GenZ Franglais</div>
+        <div class="author-tag">Age 23 · Paris, France 🇫🇷</div>
+        <p class="author-bio">
+          Big Ghibli fan. Serial Europe traveller. Saved up working at a grocery store to finally go to Japan — and it changed everything.
+        </p>
+      </div>
+      <div>
+        <div class="section-label">About this guide</div>
+        <h2 class="section-title">Written by a Gen Z for Gen Z</h2>
+        <p class="section-body">
+          As a woman living in France, going to Japan alone wasn't an easy decision. But with help from friends who had already been, I planned a 7-night trip on a tiny budget — and it was the best trip of my life.
+        </p>
+        <p class="section-body">
+          This ebook is everything I wish I had before I left. No luxury travel blogger fluff — just real tips, real prices, and a real itinerary from someone who did it on SMIC savings. 💪
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHAT'S INSIDE ─────────────────────────────────────────── -->
+  <section class="inside" id="inside">
+    <div class="inside-inner">
+      <div class="inside-header">
+        <div class="section-label">What's inside</div>
+        <h2 class="section-title">Everything you need<br>to plan your Japan trip</h2>
+      </div>
+      <div class="chapters-grid">
+        <div class="ch-card">
+          <span class="ch-emoji">🎒</span>
+          <div class="ch-title">Chapter 1 — What's in my bag?</div>
+          <p class="ch-desc">The exact packing list — what to absolutely bring and what to leave at home.</p>
+          <div class="ch-topics">
+            <span class="topic-tag">Packing list</span>
+            <span class="topic-tag">Luggage tips</span>
+            <span class="topic-tag">IC Card</span>
+            <span class="topic-tag">Power bank</span>
+          </div>
+        </div>
+        <div class="ch-card">
+          <span class="ch-emoji">🗾</span>
+          <div class="ch-title">Chapter 2 — Where to go?</div>
+          <p class="ch-desc">Full 7-night itinerary with Ghibli spots, traditional experiences, festivals & restaurant picks.</p>
+          <div class="ch-topics">
+            <span class="topic-tag">Ghibli Museum</span>
+            <span class="topic-tag">Kyoto temples</span>
+            <span class="topic-tag">Onsen</span>
+            <span class="topic-tag">Osaka food</span>
+          </div>
+        </div>
+        <div class="ch-card">
+          <span class="ch-emoji">🏨</span>
+          <div class="ch-title">Chapter 3 — Budget stays</div>
+          <p class="ch-desc">Best capsule hotels, hostels and Airbnb picks based on real Google reviews and actual prices.</p>
+          <div class="ch-topics">
+            <span class="topic-tag">Capsule hotels</span>
+            <span class="topic-tag">Hostels</span>
+            <span class="topic-tag">Airbnb tips</span>
+            <span class="topic-tag">Booking hacks</span>
+          </div>
+        </div>
+        <div class="ch-card">
+          <span class="ch-emoji">🌸</span>
+          <div class="ch-title">Chapter 4 — Solo travel tips</div>
+          <p class="ch-desc">Cultural etiquette, SIM cards, safety, insurance and what to do if you lose your passport.</p>
+          <div class="ch-topics">
+            <span class="topic-tag">Etiquette guide</span>
+            <span class="topic-tag">SIM cards</span>
+            <span class="topic-tag">Safety tips</span>
+            <span class="topic-tag">Insurance</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── DOWNLOAD SECTION ──────────────────────────────────────── -->
+  <section class="download" id="download">
+    <div class="download-inner">
+      <div class="section-label">Get your free copy</div>
+      <h2 class="section-title">Download the Ebook<br>— It's Free 🎁</h2>
+      <p class="section-body">Enter your name and email to get instant access. No spam, ever — pinky promise 🤙</p>
+
+      <div class="download-box">
+
+        <!-- STEP 1: Form (shown by default) -->
+        <div id="form-step">
+
+          <!-- 
+          ════════════════════════════════════════════════════════
+          OPTION A — EMBED YOUR GOOGLE FORM (recommended)
+          Replace the src URL below with YOUR Google Form embed link.
+          To get it: Google Form → Send → Embed → Copy the URL from src=""
+          ════════════════════════════════════════════════════════
+          -->
+          <!--
+          <div class="form-wrap">
+            <iframe 
+              src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true"
+              width="100%" 
+              height="450" 
+              frameborder="0" 
+              marginheight="0" 
+              marginwidth="0">
+              Loading…
+            </iframe>
+          </div>
+          -->
+
+          <!-- 
+          ════════════════════════════════════════════════════════
+          OPTION B — Custom styled form (use until Google Form ready)
+          This form submits to your Google Form via fetch.
+          Replace ACTION_URL with your Google Form action URL.
+          Replace entry.XXXXXXX with your real Google Form field IDs.
+          ════════════════════════════════════════════════════════
+          -->
+          <form class="custom-form" id="ebook-form" onsubmit="handleSubmit(event)">
+            <div class="form-group">
+              <label for="fname">Your first name 👋</label>
+              <input type="text" id="fname" name="entry.111111111" placeholder="e.g. Marie" required />
+            </div>
+            <div class="form-group">
+              <label for="femail">Your email address 📧</label>
+              <input type="email" id="femail" name="entry.222222222" placeholder="marie@email.com" required />
+            </div>
+            <button type="submit" class="submit-btn">
+              🎁 Send me the free ebook!
+            </button>
+            <p class="form-note">🔒 No spam. Unsubscribe anytime. 100% free.</p>
+          </form>
+        </div>
+
+        <!-- STEP 2: Success + Download button (shown after form submit) -->
+        <div class="download-success" id="success-step">
+          <div class="success-icon">🎉</div>
+          <div class="success-title">You're in! Enjoy the read 🌸</div>
+          <p class="success-sub">Your free ebook is ready to download. Click below and start planning your Japan adventure!</p>
+          <!-- 
+            Replace "japan_ebook_genz.pdf" with the actual path to your PDF file.
+            Upload the PDF to your GitHub repo and update this link.
+          -->
+          <a href="japan_ebook_genz.pdf" download="Japan_Budget_Guide_GenZFranglais.pdf" class="download-btn">
+            ⬇️ Download Now — Japan on a Budget.pdf
+          </a>
+          <p class="form-note" style="margin-top:1rem;">Having trouble? Email us at hello@japanbudgetguide.com</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ────────────────────────────────────────────────── -->
+  <footer>
+    <p>Made with 💖 by <strong>GenZ Franglais</strong> · Paris, France 🇫🇷</p>
+    <p style="margin-top:0.4rem">Built with HTML5 & CSS3 · Hosted on <a href="https://pages.github.com" target="_blank">GitHub Pages</a></p>
+    <p style="margin-top:0.4rem; font-size:0.74rem; opacity:0.5">© 2025 GenZ Franglais · Free to share · Prices are indicative for 2025</p>
+  </footer>
+
+  <!-- ── SCRIPTS ───────────────────────────────────────────────── -->
+  <script>
+    // ── FORM SUBMIT HANDLER ──────────────────────────────────────
+    function handleSubmit(e) {
+      e.preventDefault();
+
+      const form = document.getElementById('ebook-form');
+      const name = document.getElementById('fname').value;
+      const email = document.getElementById('femail').value;
+
+      // Basic validation
+      if (!name.trim() || !email.trim()) return;
+
+      /*
+      ════════════════════════════════════════════════════════
+      TO CONNECT TO GOOGLE FORMS:
+      1. Create your Google Form with Name + Email fields
+      2. Get the form action URL (right-click "Submit" → inspect → find action="...")
+         It looks like: https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse
+      3. Replace the URL below
+      4. Replace entry.111111111 and entry.222222222 with your real field IDs
+      ════════════════════════════════════════════════════════
+      */
+      const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/YOUR_FORM_ID_HERE/formResponse';
+
+      const data = new FormData();
+      data.append('entry.111111111', name);   // Replace with real field ID
+      data.append('entry.222222222', email);  // Replace with real field ID
+
+      // Submit to Google Forms (no-cors = no response, that's expected)
+      fetch(GOOGLE_FORM_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: data
+      }).catch(() => {}); // silence cors error — form still submits
+
+      // Show success step regardless (Google Forms no-cors always "fails" in fetch)
+      showSuccess(name);
+    }
+
+    function showSuccess(name) {
+      document.getElementById('form-step').style.display = 'none';
+      const success = document.getElementById('success-step');
+      success.style.display = 'block';
+      // Personalise the message
+      success.querySelector('.success-title').textContent = `You're in, ${name}! 🌸`;
+    }
+
+    // ── SMOOTH SCROLL OFFSET FOR FIXED NAV ──────────────────────
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          const top = target.getBoundingClientRect().top + window.scrollY - 70;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // ── SCROLL REVEAL ────────────────────────────────────────────
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.ch-card, .stat-num, .author-card').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
