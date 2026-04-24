@@ -1,254 +1,658 @@
-<!DOCTYPE html>
+here is the original code : <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Japan on a Budget — Free Ebook</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Japan on a Budget — Free Ebook for Travelers</title>
+  <meta name="description" content="Get your free ebook: 7 nights in Japan on a tiny budget. Itinerary, tips, cheap stays & more for backpackers." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
-
-<!-- GA -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LGX0VLXQH2"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-LGX0VLXQH2');
-</script>
-
-<!-- GTM -->
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LGX0VLXQH2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LGX0VLXQH2');
+  </script>
+  
+   <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-KZBKWXV6');</script>
+<!-- End Google Tag Manager -->
 
-<style>
+  <style>
+   /* ═══════════════════════════════════════
+   CLEAN CANVA-STYLE REDESIGN (CSS ONLY)
+═══════════════════════════════════════ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 :root{
-  --bg:#faf7f2;
-  --card:#fff;
+  --bg:#f7f4ef;
+  --card:#ffffff;
   --text:#111;
   --muted:#666;
   --accent:#d62839;
-  --soft:#e8e3dc;
+  --soft:#e7e1d8;
+  --radius:18px;
 }
 
-*{margin:0;padding:0;box-sizing:border-box}
+html{
+  scroll-behavior:smooth;
+}
+
 body{
-  font-family:Inter,sans-serif;
-  background:var(--bg);
-  color:var(--text);
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
 }
 
-/* NAV */
+/* ═════════ NAV ═════════ */
 nav{
   position:fixed;
   top:0;left:0;right:0;
-  background:rgba(250,247,242,.95);
-  backdrop-filter:blur(10px);
   display:flex;
   justify-content:space-between;
+  align-items:center;
   padding:16px 40px;
+  background:rgba(247,244,239,.9);
+  backdrop-filter: blur(10px);
   border-bottom:1px solid var(--soft);
   z-index:1000;
 }
-.logo{font-weight:700}
-.logo span{color:var(--accent)}
-.cta{
+
+.nav-logo{
+  font-weight:700;
+  letter-spacing:.3px;
+}
+
+.nav-logo em{
+  color:var(--accent);
+  font-style:normal;
+}
+
+.nav-cta{
   background:var(--text);
   color:#fff;
   padding:10px 16px;
   border-radius:999px;
   text-decoration:none;
   font-weight:600;
+  transition:.2s;
 }
 
-/* HERO */
+.nav-cta:hover{
+  background:var(--accent);
+}
+
+/* ═════════ HERO ═════════ */
 .hero{
-  padding:140px 40px 60px;
+  padding:140px 20px 80px;
   max-width:1100px;
   margin:auto;
   text-align:center;
 }
-.hero h1{
-  font-family:"Playfair Display",serif;
-  font-size:64px;
-  line-height:1;
+
+.hero-headline{
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(42px, 6vw, 72px);
+  line-height:1.05;
+  letter-spacing:-0.02em;
 }
-.hero h1 span{color:var(--accent)}
-.hero p{
+
+.hero-headline .line-red{
+  color:var(--accent);
+}
+
+.hero-subline{
   margin-top:20px;
-  color:var(--muted);
-  font-size:18px;
   max-width:600px;
   margin-inline:auto;
+  color:var(--muted);
+  font-size:18px;
 }
 
-/* DOWNLOAD SECTION (kept + improved) */
-.download{
-  margin:60px auto;
-  max-width:600px;
-  background:#fff;
-  padding:30px;
-  border-radius:16px;
-  border:1px solid var(--soft);
-  box-shadow:0 10px 30px rgba(0,0,0,.04);
+/* ═════════ PILLS ═════════ */
+.hero-pills{
+  margin-top:25px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  justify-content:center;
 }
-.download h2{
-  font-family:"Playfair Display",serif;
-  font-size:42px;
+
+.pill{
+  background:#fff;
+  border:1px solid var(--soft);
+  padding:8px 12px;
+  border-radius:999px;
+  font-size:13px;
+}
+
+/* ═════════ BUTTONS ═════════ */
+.hero-cta-group{
+  margin-top:30px;
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.btn-primary{
+  background:var(--accent);
+  color:#fff;
+  padding:12px 20px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:600;
+  transition:.2s;
+}
+
+.btn-primary:hover{
+  opacity:.9;
+}
+
+.btn-ghost{
+  color:var(--text);
+  text-decoration:none;
+  padding:12px 10px;
+  font-weight:500;
+  border-bottom:1px solid transparent;
+}
+
+.btn-ghost:hover{
+  border-color:var(--text);
+}
+
+/* ═════════ SECTIONS BASE ═════════ */
+section{
+  max-width:1000px;
+  margin:80px auto;
+  padding:0 20px;
+}
+
+/* ═════════ DOWNLOAD (IMPORTANT) ═════════ */
+.download{
+  background:var(--card);
+  border:1px solid var(--soft);
+  border-radius:var(--radius);
+  padding:40px 25px;
+  max-width:500px;
+  margin:80px auto;
+  box-shadow:0 10px 30px rgba(0,0,0,.04);
   text-align:center;
 }
-.download h2 span{color:var(--accent)}
 
-input{
+.download-headline{
+  font-family:'Playfair Display', serif;
+  font-size:42px;
+  margin-bottom:25px;
+}
+
+.download-headline span{
+  color:var(--accent);
+}
+
+.form-group input{
   width:100%;
   padding:12px;
-  margin-top:10px;
+  margin-bottom:12px;
   border:1px solid var(--soft);
   border-radius:12px;
+  font-size:15px;
 }
-button{
+
+.submit-btn{
   width:100%;
-  margin-top:15px;
   padding:14px;
   background:var(--accent);
-  border:none;
   color:#fff;
-  font-weight:600;
+  border:none;
   border-radius:12px;
+  font-weight:600;
   cursor:pointer;
+  transition:.2s;
 }
 
-/* ABOUT (kept, restyled) */
+.submit-btn:hover{
+  opacity:.9;
+}
+
+/* ═════════ ABOUT (KEPT BUT CLEAN) ═════════ */
 .about{
-  max-width:900px;
-  margin:80px auto;
-  padding:0 40px;
-}
-.about-box{
   background:#fff;
-  padding:30px;
-  border-radius:16px;
   border:1px solid var(--soft);
-}
-.about h2{
-  font-family:"Playfair Display",serif;
-  font-size:34px;
-}
-.about p{
-  margin-top:15px;
-  color:var(--muted);
-  line-height:1.7;
+  border-radius:var(--radius);
+  padding:30px;
 }
 
-/* INSIDE (kept, improved grid) */
-.inside{
-  max-width:900px;
-  margin:80px auto;
-  padding:0 40px;
-}
-.inside h2{
-  font-family:"Playfair Display",serif;
-  font-size:34px;
+.about-sidebar{
+  text-align:center;
   margin-bottom:20px;
 }
-.grid{
+
+.avatar-ring{
+  font-size:40px;
+  margin-bottom:10px;
+}
+
+.author-name-big{
+  font-weight:700;
+  font-size:22px;
+}
+
+.author-role{
+  font-size:12px;
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+.about-content{
+  margin-top:15px;
+}
+
+.section-headline{
+  font-family:'Playfair Display', serif;
+  font-size:28px;
+  margin-bottom:10px;
+}
+
+.about-p{
+  color:var(--muted);
+  margin-bottom:10px;
+}
+
+/* ═════════ INSIDE SECTION ═════════ */
+.inside-header{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.chapters-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(2,1fr);
   gap:15px;
 }
-.item{
+
+.ch-card{
   background:#fff;
-  padding:20px;
-  border-radius:14px;
   border:1px solid var(--soft);
+  border-radius:14px;
+  padding:20px;
 }
 
-/* FOOTER */
+.ch-title{
+  font-weight:700;
+  margin-top:10px;
+}
+
+.ch-desc{
+  color:var(--muted);
+  font-size:14px;
+  margin-top:8px;
+}
+
+/* ═════════ FOOTER ═════════ */
 footer{
   text-align:center;
-  padding:40px;
+  padding:40px 20px;
   color:var(--muted);
+  font-size:14px;
 }
-@media(max-width:800px){
-  .hero h1{font-size:42px}
-  .grid{grid-template-columns:1fr}
+
+/* ═════════ RESPONSIVE ═════════ */
+@media(max-width:768px){
+  .chapters-grid{
+    grid-template-columns:1fr;
+  }
+
+  nav{
+    padding:14px 20px;
+  }
 }
-</style>
+  </style>
 </head>
-
 <body>
-
-<!-- GTM -->
+  
+  <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZBKWXV6"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
-<nav>
-  <div class="logo">🇯🇵 Japan <span>Budget</span></div>
-  <a class="cta" href="#download">Get Ebook</a>
-</nav>
+  <div id="cursor"></div>
 
-<section class="hero">
-  <h1>Japan on a <span>Budget</span></h1>
-  <p>7 nights itinerary, real prices, and backpacking tips for Japan on a small budget.</p>
-</section>
+  <!-- ── NAV ──────────────────────────────────────────────────────── -->
+  <nav>
+    <div class="nav-logo">🇯🇵 <em>JAPAN</em> ON A BUDGET</div>
+    <div class="nav-right">
+      <span class="nav-issue">Issue 01 — 2026 Edition</span>
+      <a href="#download" class="nav-cta" id="cta-nav">Get Free Ebook</a>
+    </div>
+  </nav>
 
-<!-- DOWNLOAD (kept structure, simplified UI) -->
-<section class="download" id="download">
-  <h2>DOWNLOAD <span>FREE</span></h2>
+  <!-- ── HERO ─────────────────────────────────────────────────────── -->
+  <section class="hero" id="home">
+    <!-- Left -->
+    <div class="hero-left">
+      <div class="issue-tag">Free Travel Guide · 2026 Edition</div>
+      <h1 class="hero-headline">
+        JAPAN<br>
+        <span class="line-red">ON A</span><br>
+        <span class="line-outline">BUDGET</span>
+      </h1>
+      <p class="hero-subline">
+        7 nights. Real prices. Written by a 23-year-old who saved up from a grocery store job and finally made it to Japan. 🌸
+      </p>
+      <div class="hero-pills">
+        <div class="pill">🗾 7-night itinerary</div>
+        <div class="pill">💸 From ~1,100€</div>
+        <div class="pill">🏨 Capsule hotels & hostels</div>
+        <div class="pill">🎋 Ghibli spots</div>
+        <div class="pill">🚆 Transport hacks</div>
+      </div>
+      <div class="hero-cta-group">
+        <a href="#download" class="btn-primary" id="cta-hero-left">🎁 Get the Free Ebook</a>
+        <a href="#inside" class="btn-ghost">See what's inside →</a>
+      </div>
+    </div>
+    <!-- Right: ebook cover -->
+    <div class="hero-right">
+      <div class="free-corner">FREE</div>
+      <span class="ebook-flag-big">🇯🇵</span>
+      <div class="ebook-cover-title">JAPAN<br>ON A <span>BUDGET</span></div>
+      <div class="ebook-cover-edition">The Backpacker's Guide — 2026 Edition</div>
+      <div class="ebook-toc">
+        <div class="toc-row"><span class="toc-num">01</span> What's in my bag?</div>
+        <div class="toc-row"><span class="toc-num">02</span> Where to go? 7-night itinerary</div>
+        <div class="toc-row"><span class="toc-num">03</span> Budget hotels & capsule stays</div>
+        <div class="toc-row"><span class="toc-num">04</span> Solo travel tips & etiquette</div>
+        <div class="toc-row"><span class="toc-num">+</span> Budget calculator & essential apps</div>
+      </div>
+      <div class="ebook-meta">
+        <span class="meta-tag">📄 30+ pages</span>
+        <span class="meta-tag">🗺️ Full itinerary</span>
+        <span class="meta-tag">100% free</span>
+      </div>
+    </div>
+  </section>
 
-  <form onsubmit="handleSubmit(event)">
-    <input id="name" placeholder="Your name" required />
-    <input id="email" type="email" placeholder="Your email" required />
-    <button type="submit">Get the ebook</button>
-  </form>
-</section>
-
-<!-- ABOUT (kept content section) -->
-<section class="about">
-  <div class="about-box">
-    <h2>About this guide</h2>
-    <p>
-      As a woman living in France, going to Japan alone wasn't easy. I saved money from a grocery store job and built this 7-night itinerary.
-      This ebook is everything I wish I had before leaving — real prices, real tips, no fluff.
-    </p>
+  <!-- ── TICKER ────────────────────────────────────────────────────── -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-inner">
+      <span class="ticker-item">Free Ebook Download</span>
+      <span class="ticker-item">7 Nights in Japan</span>
+      <span class="ticker-item">Budget Travel 2026</span>
+      <span class="ticker-item">Backpacker Guide</span>
+      <span class="ticker-item">Tokyo · Kyoto · Osaka</span>
+      <span class="ticker-item">From 1,100€ All-in</span>
+      <span class="ticker-item">Ghibli Spots Included</span>
+      <span class="ticker-item">Solo Female Travel Tips</span>
+      <!-- duplicate for seamless loop -->
+      <span class="ticker-item">Free Ebook Download</span>
+      <span class="ticker-item">7 Nights in Japan</span>
+      <span class="ticker-item">Budget Travel 2026</span>
+      <span class="ticker-item">Backpacker Guide</span>
+      <span class="ticker-item">Tokyo · Kyoto · Osaka</span>
+      <span class="ticker-item">From 1,100€ All-in</span>
+      <span class="ticker-item">Ghibli Spots Included</span>
+      <span class="ticker-item">Solo Female Travel Tips</span>
+    </div>
   </div>
-</section>
 
-<!-- INSIDE (kept section) -->
-<section class="inside">
-  <h2>What’s inside</h2>
+  <!-- ── STATS ──────────────────────────────────────────────────────── -->
+  <section class="stats reveal">
+    <div class="stat-cell">
+      <div class="stat-big">7</div>
+      <div class="stat-lbl">Nights covered</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-big">~1,100<em>€</em></div>
+      <div class="stat-lbl">Minimum budget</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-big">30<em>+</em></div>
+      <div class="stat-lbl">Tips & hacks</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-big">100<em>%</em></div>
+      <div class="stat-lbl">Free to download</div>
+    </div>
+  </section>
 
-  <div class="grid">
-    <div class="item">🎒 Packing list</div>
-    <div class="item">🗾 7-day itinerary</div>
-    <div class="item">🏨 Budget stays</div>
-  </div>
-</section>
+  <!-- ── ABOUT ──────────────────────────────────────────────────────── -->
+  <section class="about reveal">
+    <div class="about-sidebar">
+      <div class="avatar-ring">👩</div>
+      <div class="author-name-big">JENNE</div>
+      <div class="author-role">ex Cashier · Paris 🇫🇷</div>
+      <p class="author-bio-text">
+        Big Ghibli fan. Serial Europe traveller. Saved up working at a grocery store to finally go to Japan — and it changed everything.
+      </p>
+    </div>
+    <div class="about-content">
+      <div class="section-eyebrow">About this guide</div>
+      <h2 class="section-headline">WRITTEN BY A <em>Jenne</em><br>FOR traveler</h2>
+      <div class="about-body">
+        <p class="about-p">
+          As a woman living in France, going to Japan alone wasn't an easy decision. But with help from friends who had already been, I planned a 7-night trip on a tiny budget — and it was the best trip of my life.
+        </p>
+        <p class="about-p">
+          This ebook is everything I wish I had before I left. No luxury travel blogger fluff — just real tips, real prices, and a real itinerary from someone who did it on SMIC savings. 💪
+        </p>
+      </div>
+    </div>
+  </section>
 
-<footer>
-  © 2026 Japan Budget Guide
-</footer>
+  <!-- ── WHAT'S INSIDE ──────────────────────────────────────────────── -->
+  <section class="inside" id="inside">
+    <div class="inside-header reveal">
+      <div class="inside-header-left">
+        <div class="section-eyebrow">What's inside</div>
+        <h2 class="section-headline">EVERYTHING YOU NEED<br>TO PLAN YOUR TRIP</h2>
+      </div>
+      <span style="font-family:var(--f-mono);font-size:0.7rem;color:var(--gray);letter-spacing:0.08em;text-transform:uppercase;">4 chapters + bonus</span>
+    </div>
+    <div class="chapters-grid">
+      <div class="ch-card reveal" data-num="01">
+        <span class="ch-emoji">🎒</span>
+        <div class="ch-title">WHAT'S IN MY BAG?</div>
+        <p class="ch-desc">The exact packing list — what to absolutely bring and what to leave at home.</p>
+        <div class="ch-topics">
+          <span class="topic-tag">Packing list</span>
+          <span class="topic-tag">Luggage tips</span>
+          <span class="topic-tag">IC Card</span>
+          <span class="topic-tag">Power bank</span>
+        </div>
+      </div>
+      <div class="ch-card reveal" data-num="02">
+        <span class="ch-emoji">🗾</span>
+        <div class="ch-title">WHERE TO GO?</div>
+        <p class="ch-desc">Full 7-night itinerary with Ghibli spots, traditional experiences, festivals & restaurant picks.</p>
+        <div class="ch-topics">
+          <span class="topic-tag">Ghibli Museum</span>
+          <span class="topic-tag">Kyoto temples</span>
+          <span class="topic-tag">Onsen</span>
+          <span class="topic-tag">Osaka food</span>
+        </div>
+      </div>
+      <div class="ch-card reveal" data-num="03">
+        <span class="ch-emoji">🏨</span>
+        <div class="ch-title">BUDGET STAYS</div>
+        <p class="ch-desc">Best capsule hotels, hostels and Airbnb picks based on real Google reviews and actual prices.</p>
+        <div class="ch-topics">
+          <span class="topic-tag">Capsule hotels</span>
+          <span class="topic-tag">Hostels</span>
+          <span class="topic-tag">Airbnb tips</span>
+          <span class="topic-tag">Booking hacks</span>
+        </div>
+      </div>
+      <div class="ch-card reveal" data-num="04">
+        <span class="ch-emoji">🌸</span>
+        <div class="ch-title">SOLO TRAVEL TIPS</div>
+        <p class="ch-desc">Cultural etiquette, SIM cards, safety, insurance and what to do if you lose your passport.</p>
+        <div class="ch-topics">
+          <span class="topic-tag">Etiquette guide</span>
+          <span class="topic-tag">SIM cards</span>
+          <span class="topic-tag">Safety tips</span>
+          <span class="topic-tag">Insurance</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<script>
-function handleSubmit(e){
-  e.preventDefault();
+  <!-- ── DOWNLOAD ───────────────────────────────────────────────────── -->
+  <section class="download" id="download">
+    <!-- Left: headline -->
+    <div class="download-left reveal">
+      <div class="download-eyebrow">Get your free copy now</div>
+      <h2 class="download-headline">
+        DOWN<br>
+        LOAD<br>
+        <span>FREE</span>
+      </h2>
+      <p class="download-sub">
+        Enter your name and email to get instant access. No spam, ever — pinky promise 🤙
+      </p>
+    </div>
+    <!-- Right: form -->
+    <div class="download-right">
 
-  const name=document.getElementById("name").value;
-  const email=document.getElementById("email").value;
+      <!-- STEP 1: Form -->
+      <div id="form-step">
+        <div class="form-title">GET THE EBOOK</div>
 
-  const url="https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse";
+        <!--
+        ════════════════════════════════════════
+        OPTION A — EMBED GOOGLE FORM
+        Uncomment and replace src URL below:
+        ════════════════════════════════════════
+        <div style="margin-bottom:1rem;">
+          <iframe
+            src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true"
+            width="100%" height="450" frameborder="0">Loading…</iframe>
+        </div>
+        -->
 
-  const data=new FormData();
-  data.append("entry.111111111",name);
-  data.append("entry.222222222",email);
+        <!--
+        OPTION B — Styled form connected to Google Forms
+        Replace GOOGLE_FORM_URL and entry IDs in the script below
+        -->
+        <form class="custom-form" id="ebook-form" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label for="fname">Your first name 👋</label>
+            <input type="text" id="fname" name="entry.111111111" placeholder="e.g. Marie" required />
+          </div>
+          <div class="form-group">
+            <label for="femail">Your email address 📧</label>
+            <input type="email" id="femail" name="entry.222222222" placeholder="marie@email.com" required />
+          </div>
+          <button type="submit" class="submit-btn" id="cta-submit">
+            🎁 Send me the free ebook!
+          </button>
+          <p class="form-note">🔒 No spam. Unsubscribe anytime. 100% free.</p>
+        </form>
+      </div>
 
-  fetch(url,{method:"POST",mode:"no-cors",body:data});
+      <!-- STEP 2: Success -->
+      <div class="download-success" id="success-step">
+        <span class="success-icon">🎉</span>
+        <div class="success-title">YOU'RE IN!</div>
+        <p class="success-sub">Your free ebook is ready. Click below and start planning your Japan adventure!</p>
+        <a href="Japan trip 7 nights on a budget.pdf" download="Japan trip 7 nights on a budget.pdf" class="download-btn">
+          ⬇️ Download Now — Japan on a Budget.pdf
+        </a>
+        <p class="form-note" style="margin-top:1rem;">Having trouble? Email us at hello@japanbudgetguide.com</p>
+      </div>
 
-  alert("Check your email — ebook sent!");
-}
-</script>
+    </div>
+  </section>
 
+  <!-- ── FOOTER ────────────────────────────────────────────────────── -->
+  <footer>
+    <div class="footer-brand">🇯🇵 <em>JAPAN</em> ON A BUDGET</div>
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#inside">Contents</a>
+      <a href="#download">Download</a>
+      <a href="https://pages.github.com" target="_blank">GitHub Pages</a>
+    </div>
+    <div class="footer-copy">© 2026 Jenne · Made with 💖 in Paris</div>
+  </footer>
+
+  <!-- ── SCRIPTS ───────────────────────────────────────────────── -->
+  <script>
+    // ── CUSTOM CURSOR ──────────────────────────────────────────────
+    const cur = document.getElementById('cursor');
+    document.addEventListener('mousemove', e => {
+      cur.style.left = e.clientX + 'px';
+      cur.style.top  = e.clientY + 'px';
+    });
+    document.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('mouseenter', () => cur.classList.add('big'));
+      el.addEventListener('mouseleave', () => cur.classList.remove('big'));
+    });
+
+    // ── FORM SUBMIT ────────────────────────────────────────────────
+    function handleSubmit(e) {
+      e.preventDefault();
+      const name  = document.getElementById('fname').value;
+      const email = document.getElementById('femail').value;
+      if (!name.trim() || !email.trim()) return;
+
+      /*
+      Replace these values:
+      - GOOGLE_FORM_URL: your Google Form action URL
+      - entry.111111111: field ID for name
+      - entry.222222222: field ID for email
+      */
+      const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/YOUR_FORM_ID_HERE/formResponse';
+      const data = new FormData();
+      data.append('entry.111111111', name);
+      data.append('entry.222222222', email);
+
+      fetch(GOOGLE_FORM_URL, { method: 'POST', mode: 'no-cors', body: data }).catch(() => {});
+      showSuccess(name);
+    }
+
+    function showSuccess(name) {
+      document.getElementById('form-step').style.display = 'none';
+      const s = document.getElementById('success-step');
+      s.style.display = 'block';
+      s.querySelector('.success-title').textContent = `YOU'RE IN, ${name.toUpperCase()}! 🌸`;
+    }
+
+    // ── SCROLL REVEAL ──────────────────────────────────────────────
+    const io = new IntersectionObserver(entries => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // ── SMOOTH SCROLL ──────────────────────────────────────────────
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const t = document.querySelector(a.getAttribute('href'));
+        if (t) {
+          e.preventDefault();
+          window.scrollTo({ top: t.getBoundingClientRect().top + scrollY - 68, behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
