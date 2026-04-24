@@ -292,6 +292,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       pointer-events: none;
     }
 
+    /*avatar profil photo*/
+    .avatar-ring {
+      width: 90px;
+      height: 90px;
+      border: 2px solid var(--red);
+      border-radius: 50%;
+      overflow: hidden; /* important */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .avatar-ring img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* keeps proportions, fills circle */
+    }
+    
     /* Diagonal stripe */
     .hero-right::after {
       content: '';
@@ -870,7 +888,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="toc-row"><span class="toc-num">+</span> Budget calculator & essential apps</div>
       </div>
       <div class="ebook-meta">
-        <span class="meta-tag">📄 30+ pages</span>
+        <span class="meta-tag">📄 11+ pages</span>
         <span class="meta-tag">🗺️ Full itinerary</span>
         <span class="meta-tag">100% free</span>
       </div>
@@ -923,16 +941,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- ── ABOUT ──────────────────────────────────────────────────────── -->
   <section class="about reveal">
     <div class="about-sidebar">
-      <div class="avatar-ring">👩</div>
-      <div class="author-name-big">JENNE</div>
+      <div class="avatar-ring">
+      <img src="images/avatar.png" alt="Profil Photo Jenne pk">
+      </div>
+      <div class="author-name-big">Jenne pk</div>
       <div class="author-role">ex Cashier · Paris 🇫🇷</div>
       <p class="author-bio-text">
-        Big Ghibli fan. Serial Europe traveller. Saved up working at a grocery store to finally go to Japan — and it changed everything.
+        I'm a big Ghibli fan. Serial Europe traveller. Saved up working at a grocery store to finally go to Japan — and it changed everything.
       </p>
     </div>
     <div class="about-content">
       <div class="section-eyebrow">About this guide</div>
-      <h2 class="section-headline">WRITTEN BY A <em>Jenne</em><br>FOR traveler</h2>
+      <h2 class="section-headline">WRITTEN BY A <em>Jenne pk</em><br>For beginner</h2>
       <div class="about-body">
         <p class="about-p">
           As a woman living in France, going to Japan alone wasn't an easy decision. But with help from friends who had already been, I planned a 7-night trip on a tiny budget — and it was the best trip of my life.
