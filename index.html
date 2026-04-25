@@ -9,7 +9,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
-  <!-- Google tag (gtag.js) -->
   
   
   <!-- Google Tag Manager -->
@@ -57,7 +56,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 
     /* ── CUSTOM CURSOR ─────────────────────────────────────────── */
-    body { cursor: none; }
+    @media (max-width: 900px) {
+     body { cursor: auto; }
+    #cursor { display: none; }
+    }
     #cursor {
       position: fixed;
       width: 10px; height: 10px;
@@ -455,15 +457,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       text-align: center;
       gap: 1rem;
     }
-    .avatar-ring {
-      width: 90px; height: 90px;
-      border: 2px solid var(--red);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.5rem;
-    }
+    
     .author-name-big {
       font-family: var(--f-display);
       font-size: 1.8rem;
@@ -1120,7 +1114,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       - entry.111111111: field ID for name
       - entry.222222222: field ID for email
       */
-      const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/YOUR_FORM_ID_HERE/formResponse';
+      const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1YEbvRHojpGhKfiuUhXsVD4_5mv5Ew5JQAvQCbiZCP0A/formResponse';
       const data = new FormData();
       data.append('entry.111111111', name);
       data.append('entry.222222222', email);
