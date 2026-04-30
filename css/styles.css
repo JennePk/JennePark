@@ -849,6 +849,9 @@
   margin-top: 60px;
 }
 
+#copy-link {
+  cursor: pointer;
+}
 
 /* Back button */
 nav a {
