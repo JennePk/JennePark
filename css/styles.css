@@ -853,6 +853,58 @@
   cursor: pointer;
 }
 
+/* CTA block */
+.tiktok-cta {
+  text-align: center;
+  padding: 30px;
+  margin: 40px 0;
+  background: #f5f5f5;
+  border-radius: 10px;
+}
+
+.tiktok-cta a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 20px;
+  background: #000;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+/* Share section */
+.article-actions {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.article-actions a,
+.article-actions button {
+  margin: 5px;
+  padding: 10px 15px;
+  background: #eee;
+  border-radius: 5px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.article-actions a:hover,
+.article-actions button:hover {
+  background: #ddd;
+}
+
+/* Comments */
+.comments {
+  margin-top: 60px;
+}
+
+/* Copy link cursor */
+#copy-link {
+  cursor: pointer;
+}
+
+
 /* Back button */
 nav a {
   display: inline-block;
