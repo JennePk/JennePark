@@ -785,6 +785,12 @@
 
 /* ARTICLE PAGE (Medium style) */
 
+.article-cover {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
 .article {
   max-width: 720px;
   margin: 60px auto;
