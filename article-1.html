@@ -379,6 +379,14 @@
 </article>
 
   <div id="global-components"></div>
+    <script>
+      fetch("/components.html")
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById("global-components").innerHTML = html;
+        });
+  </script>
+  
 
 <a href="index.html#download">🎁 Get my full Japan guide for free</a>
   
