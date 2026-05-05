@@ -835,6 +835,16 @@
   margin-bottom: 10px;
 }
 
+.article li {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+.article ul {
+  list-style-type: disc;
+}
+
 /* Links */
 .article a {
   color: #1a8917;
