@@ -896,9 +896,9 @@
 
 /* Comments */
 .comments {
+  max-width: 720px;
   margin: 60px auto;
   padding: 0 20px;
-  
 }
 
 /* Copy link cursor */
