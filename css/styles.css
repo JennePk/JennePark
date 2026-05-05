@@ -850,6 +850,12 @@
 
 .article ul {
   list-style-type: disc;
+  padding-left: 25px;
+}
+
+.article li {
+  margin-bottom: 10px;
+  line-height: 1.7;
 }
 
 /* Links */
