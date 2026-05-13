@@ -214,6 +214,44 @@
   </p>
 
 </div>
+<a href="index.html#download">🎁 Get my full Japan guide for free</a>
+  
+  <script>
+fetch("components.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("global-components").innerHTML = data;
 
+    const url = encodeURIComponent(window.location.href);
+    const text = encodeURIComponent(document.title);
+
+    // X (Twitter)
+    document.getElementById("share-x").href =
+      `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+
+    // Threads (no official share URL → fallback)
+    document.getElementById("share-threads").href =
+      `https://www.threads.net/intent/post?text=${text}%20${url}`;
+
+    // LinkedIn
+    document.getElementById("share-linkedin").href =
+      `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+
+    // Copy link
+    document.getElementById("copy-link").addEventListener("click", function(e) {
+      e.preventDefault();
+      navigator.clipboard.writeText(window.location.href);
+      this.textContent = "Copied!";
+      setTimeout(() => {
+        this.textContent = "Copy link";
+      }, 2000);
+    });
+  });
+
+// Like button (simple version)
+function likeArticle() {
+  alert("Thanks for liking ♡");
+}
+  </script>
 </body>
 </html>
