@@ -54,51 +54,63 @@
 
 </article>
 
-  <div id="global-components"></div>
+   <div id="global-components"></div>
+  <div class="comments">
 
-<script>
+  <script src="https://giscus.app/client.js"
+          data-repo="JennePk/JennePark"
+          data-repo-id="R_kgDOSDi9lQ"
+          data-category="General"
+          data-category-id="DIC_kwDOSDi9lc4C8Do4"
+          data-mapping="pathname"
+          data-reactions-enabled="1"
+          data-theme="light"
+          crossorigin="anonymous">
+  </script>
+</div>
+  
+
+<a href="index.html#download">🎁 Get my full Japan guide for free</a>
+  
+  <script>
 fetch("components.html")
   .then(res => res.text())
-  .then(html => {
-    document.getElementById("global-components").innerHTML = html;
+  .then(data => {
+    document.getElementById("global-components").innerHTML = data;
 
     const url = encodeURIComponent(window.location.href);
     const text = encodeURIComponent(document.title);
 
-    // Social share links
-    const x = document.getElementById("share-x");
-    const threads = document.getElementById("share-threads");
-    const linkedin = document.getElementById("share-linkedin");
-    const copy = document.getElementById("copy-link");
+    // X (Twitter)
+    document.getElementById("share-x").href =
+      `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
 
-    if (x) {
-      x.href = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
-    }
+    // Threads (no official share URL → fallback)
+    document.getElementById("share-threads").href =
+      `https://www.threads.net/intent/post?text=${text}%20${url}`;
 
-    if (threads) {
-      threads.href = `https://www.threads.net/intent/post?text=${text}%20${url}`;
-    }
+    // LinkedIn
+    document.getElementById("share-linkedin").href =
+      `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
 
-    if (linkedin) {
-      linkedin.href = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
-    }
-
-    if (copy) {
-      copy.addEventListener("click", function(e) {
-        e.preventDefault();
-        navigator.clipboard.writeText(window.location.href);
-        this.textContent = "Copied!";
-        setTimeout(() => {
-          this.textContent = "Copy link";
-        }, 2000);
-      });
-    }
+    // Copy link
+    document.getElementById("copy-link").addEventListener("click", function(e) {
+      e.preventDefault();
+      navigator.clipboard.writeText(window.location.href);
+      this.textContent = "Copied!";
+      setTimeout(() => {
+        this.textContent = "Copy link";
+      }, 2000);
+    });
   });
 
-// simple like function
+// Like button (simple version)
 function likeArticle() {
   alert("Thanks for liking ♡");
 }
 </script>
+  
 
+</body>
+</html>
   
