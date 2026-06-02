@@ -314,6 +314,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       const email = document.getElementById('femail').value;
       if (!name.trim() || !email.trim()) return;
 
+      // ── DATALAYER HANDLESUBMIT() ────────────────────────────────────────────────
+      
+      window.dataLayer = window.dataLayer || [];
+      dataLayer.push({
+        event: 'form_submit_ebook',
+        lead_source: 'japan_budget_ebook',
+        form_id: 'ebook-form'
+       });
+      
       /*
       Replace these values:
       - GOOGLE_FORM_URL: your Google Form action URL
