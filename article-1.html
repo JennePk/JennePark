@@ -364,10 +364,11 @@ fetch("components.html")
   });
 
 // Like button (simple version)
+window.dataLayer = window.dataLayer || [];
+
 function likeArticle() {
   alert("Thanks for liking ♡");
 
-  window.dataLayer = window.dataLayer || [];
   dataLayer.push({
     event: 'article_like'
   });
