@@ -394,6 +394,11 @@ fetch("components.html")
 // Like button (simple version)
 function likeArticle() {
   alert("Thanks for liking ♡");
+
+  window.dataLayer = window.dataLayer || [];
+  dataLayer.push({
+    event: 'article_like'
+  });
 }
 </script>
   
