@@ -380,7 +380,7 @@ function likeArticle() {
 
   dataLayer.push({
     event: 'article_like',
-    article_id: document.getElementById('btn-like').dataset.articleId,
+    article_id: window.location.pathname,
     article_title: document.title,
     page_path: window.location.pathname
   });
