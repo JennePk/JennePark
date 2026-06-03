@@ -379,9 +379,13 @@ function likeArticle() {
   alert("Thanks for liking ♡");
 
   dataLayer.push({
-    event: 'article_like'
+    event: 'article_like',
+    article_id: document.getElementById('btn-like').dataset.articleId,
+    article_title: document.title,
+    page_path: window.location.pathname
   });
 }
+    
 </script>
   
 
