@@ -377,19 +377,17 @@ fetch("components.html")
     const url = encodeURIComponent(window.location.href);
     const text = encodeURIComponent(document.title);
 
-    // X (Twitter)
+    // SHARE LINKS (toujours nécessaires)
     document.getElementById("share-x").href =
       `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
 
-    // Threads (no official share URL → fallback)
     document.getElementById("share-threads").href =
       `https://www.threads.net/intent/post?text=${text}%20${url}`;
 
-    // LinkedIn
     document.getElementById("share-linkedin").href =
       `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
 
-    // Copy link
+    // COPY LINK
     document.getElementById("copy-link").addEventListener("click", function(e) {
       e.preventDefault();
       navigator.clipboard.writeText(window.location.href);
@@ -398,17 +396,48 @@ fetch("components.html")
         this.textContent = "Copy link";
       }, 2000);
     });
+
+    window.dataLayer = window.dataLayer || [];
+
+    // LIKE BUTTON (IMPORTANT FIX)
+    document.getElementById("btn-like").addEventListener("click", function () {
+      likeArticle();
+    });
+
+    // SHARE TRACKING (GTM)
+    document.getElementById("share-x").addEventListener("click", () => {
+      dataLayer.push({
+        event: "social_share",
+        network: "x",
+        page_path: window.location.pathname
+      });
+    });
+
+    document.getElementById("share-linkedin").addEventListener("click", () => {
+      dataLayer.push({
+        event: "social_share",
+        network: "linkedin",
+        page_path: window.location.pathname
+      });
+    });
+
+    document.getElementById("share-threads").addEventListener("click", () => {
+      dataLayer.push({
+        event: "social_share",
+        network: "threads",
+        page_path: window.location.pathname
+      });
+    });
   });
-
+    
 // Like button (simple version)
-window.dataLayer = window.dataLayer || [];
-
+    
 function likeArticle() {
   alert("Thanks for liking ♡");
 
   dataLayer.push({
     event: 'article_like',
-    article_id: window.location.pathname.replace('.html', ''),
+    article_id: window.location.pathname.replace('.html',''),
     article_title: document.title,
     page_path: window.location.pathname
   });
