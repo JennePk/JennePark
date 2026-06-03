@@ -322,9 +322,10 @@
 
 </article>
 
-  <div id="global-components"></div>
-  <div class="comments">
+ <!-- components container -->
+<div id="global-components"></div>
 
+<div class="comments">
   <script src="https://giscus.app/client.js"
           data-repo="JennePk/JennePark"
           data-repo-id="R_kgDOSDi9lQ"
@@ -336,13 +337,13 @@
           crossorigin="anonymous">
   </script>
 </div>
-  
 
 <a href="index.html#download">🎁 Get my full Japan guide for free</a>
 
- 
-  
-  <script>
+  <!-- tracking -->
+<script src="tracking.js"></script>
+
+<script>
 fetch("components.html")
   .then(res => res.text())
   .then(html => {
@@ -383,16 +384,14 @@ fetch("components.html")
       });
     }
 
-    // 🚀 IMPORTANT : init tracking (LIKE + SHARE GTM)
-    if (typeof initArticleTracking === "function") {
-      initArticleTracking();
-    }
+    // INIT TRACKING SAFE
+    setTimeout(() => {
+      if (typeof initArticleTracking === "function") {
+        initArticleTracking();
+      }
+    }, 50);
   });
-    
 </script>
-  
- <!-- scripts -->
-<script src="tracking.js"></script>
-  
+ 
 </body>
 </html>
