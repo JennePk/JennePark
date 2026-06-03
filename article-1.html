@@ -349,7 +349,7 @@ fetch("components.html")
     const url = encodeURIComponent(window.location.href);
     const text = encodeURIComponent(document.title);
 
-    // SHARE LINKS (toujours nécessaires)
+    // SHARE LINKS (OK)
     document.getElementById("share-x").href =
       `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
 
@@ -359,7 +359,7 @@ fetch("components.html")
     document.getElementById("share-linkedin").href =
       `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
 
-    // COPY LINK
+    // COPY LINK (OK)
     document.getElementById("copy-link").addEventListener("click", function(e) {
       e.preventDefault();
       navigator.clipboard.writeText(window.location.href);
@@ -369,51 +369,8 @@ fetch("components.html")
       }, 2000);
     });
 
-    window.dataLayer = window.dataLayer || [];
-
-    // LIKE BUTTON (IMPORTANT FIX)
-    document.getElementById("btn-like").addEventListener("click", function () {
-      likeArticle();
-    });
-
-    // SHARE TRACKING (GTM)
-    document.getElementById("share-x").addEventListener("click", () => {
-      dataLayer.push({
-        event: "social_share",
-        network: "x",
-        page_path: window.location.pathname
-      });
-    });
-
-    document.getElementById("share-linkedin").addEventListener("click", () => {
-      dataLayer.push({
-        event: "social_share",
-        network: "linkedin",
-        page_path: window.location.pathname
-      });
-    });
-
-    document.getElementById("share-threads").addEventListener("click", () => {
-      dataLayer.push({
-        event: "social_share",
-        network: "threads",
-        page_path: window.location.pathname
-      });
-    });
+    initArticleTracking(); // 👈 tu remplaces tout le reste par ça
   });
-    
-// Like button (simple version)
-    
-function likeArticle() {
-  alert("Thanks for liking ♡");
-
-  dataLayer.push({
-    event: 'article_like',
-    article_id: window.location.pathname.replace('.html',''),
-    article_title: document.title,
-    page_path: window.location.pathname
-  });
-}
     
 </script>
   
