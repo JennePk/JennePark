@@ -323,6 +323,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         lead_source: 'japan_budget_ebook',
         form_id: 'ebook-form'
        });
+
+       // ── DATALAYER like post() ────────────────────────────────────────────────
+
+     window.dataLayer = window.dataLayer || [];
+
+        function likeArticle() {
+          dataLayer.push({
+            event: 'article_like',
+            article_id: document.getElementById('btn-like')?.id,
+            page_path: window.location.pathname
+          });
+        
+          alert("Thanks for liking ♡");
+        }    
       
       /*
       Replace these values:
