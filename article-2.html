@@ -21,7 +21,7 @@
   
 </head>
 
-<body>
+<body data-article-id="blog-article-2"> 
 
 <nav>
   <a href="blog.html">← Back to blog</a>
@@ -401,12 +401,16 @@ fetch("components.html")
   });
 
 // Like button (simple version)
+window.dataLayer = window.dataLayer || [];
+
 function likeArticle() {
   alert("Thanks for liking ♡");
 
-  window.dataLayer = window.dataLayer || [];
   dataLayer.push({
-    event: 'article_like'
+    event: 'article_like',
+    article_id: window.location.pathname.replace('.html', ''),
+    article_title: document.title,
+    page_path: window.location.pathname
   });
 }
 </script>
