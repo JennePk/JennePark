@@ -15,7 +15,7 @@
   
 </head>
 
-<body>
+<body data-article-id="blog-article-1">
 
 <nav>
   <a href="blog.html">← Back to blog</a>
@@ -380,7 +380,7 @@ function likeArticle() {
 
   dataLayer.push({
     event: 'article_like',
-    article_id: window.location.pathname,
+    article_id: document.body.dataset.articleId,
     article_title: document.title,
     page_path: window.location.pathname
   });
