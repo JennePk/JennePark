@@ -601,7 +601,6 @@ fetch("components.html")
     const url = encodeURIComponent(window.location.href);
     const text = encodeURIComponent(document.title);
 
-    // SHARE LINKS
     const shareX = document.getElementById("share-x");
     const shareThreads = document.getElementById("share-threads");
     const shareLinkedin = document.getElementById("share-linkedin");
@@ -618,22 +617,18 @@ fetch("components.html")
       shareLinkedin.href = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
     }
 
-    // COPY LINK
     const copyLink = document.getElementById("copy-link");
 
     if (copyLink) {
       copyLink.addEventListener("click", function (e) {
         e.preventDefault();
         navigator.clipboard.writeText(window.location.href);
-
         this.textContent = "Copied!";
-        setTimeout(() => {
-          this.textContent = "Copy link";
-        }, 2000);
+        setTimeout(() => this.textContent = "Copy link", 2000);
       });
     }
 
-    // INIT TRACKING SAFE
+    // IMPORTANT FIX (DOM ready safety)
     setTimeout(() => {
       if (typeof initArticleTracking === "function") {
         initArticleTracking();
