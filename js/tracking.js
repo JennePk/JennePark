@@ -1,5 +1,18 @@
 window.dataLayer = window.dataLayer || [];
 
+// LIKE EVENT
+function likeArticle() {
+  alert("Thanks for liking ♡");
+
+  dataLayer.push({
+    event: "article_like",
+    article_id: window.location.pathname.replace(".html", ""),
+    article_title: document.title,
+    page_path: window.location.pathname
+  });
+}
+
+// INIT ALL TRACKING
 function initArticleTracking() {
   const likeBtn = document.getElementById("btn-like");
   const shareX = document.getElementById("share-x");
