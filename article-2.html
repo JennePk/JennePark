@@ -371,33 +371,48 @@
   <script>
 fetch("components.html")
   .then(res => res.text())
-  .then(data => {
-    document.getElementById("global-components").innerHTML = data;
+  .then(html => {
+    document.getElementById("global-components").innerHTML = html;
 
     const url = encodeURIComponent(window.location.href);
     const text = encodeURIComponent(document.title);
 
-    // SHARE LINKS (OK)
-    document.getElementById("share-x").href =
-      `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+    // SHARE LINKS
+    const shareX = document.getElementById("share-x");
+    const shareThreads = document.getElementById("share-threads");
+    const shareLinkedin = document.getElementById("share-linkedin");
 
-    document.getElementById("share-threads").href =
-      `https://www.threads.net/intent/post?text=${text}%20${url}`;
+    if (shareX) {
+      shareX.href = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+    }
 
-    document.getElementById("share-linkedin").href =
-      `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+    if (shareThreads) {
+      shareThreads.href = `https://www.threads.net/intent/post?text=${text}%20${url}`;
+    }
 
-    // COPY LINK (OK)
-    document.getElementById("copy-link").addEventListener("click", function(e) {
-      e.preventDefault();
-      navigator.clipboard.writeText(window.location.href);
-      this.textContent = "Copied!";
-      setTimeout(() => {
-        this.textContent = "Copy link";
-      }, 2000);
-    });
+    if (shareLinkedin) {
+      shareLinkedin.href = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+    }
 
-    initArticleTracking(); // 👈 tu remplaces tout le reste par ça
+    // COPY LINK
+    const copyLink = document.getElementById("copy-link");
+
+    if (copyLink) {
+      copyLink.addEventListener("click", function (e) {
+        e.preventDefault();
+        navigator.clipboard.writeText(window.location.href);
+
+        this.textContent = "Copied!";
+        setTimeout(() => {
+          this.textContent = "Copy link";
+        }, 2000);
+      });
+    }
+
+    // 🚀 IMPORTANT : init tracking (LIKE + SHARE GTM)
+    if (typeof initArticleTracking === "function") {
+      initArticleTracking();
+    }
   });
 </script>
   
