@@ -433,7 +433,7 @@ nav {
 
 /* TikTok card */
 .tt-card {
-  flex: 0 0 300px;
+  flex: 0 0 280px;
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.08);
   overflow: hidden;
@@ -445,6 +445,7 @@ nav {
   aspect-ratio: 9 / 16;
   position: relative;
   overflow: hidden;
+  background: #000;
 }
 
 .tt-img {
@@ -456,27 +457,7 @@ nav {
 
 
 /* Placeholder thumb colors per card */
-.tt-thumb-1 { background: linear-gradient(135deg, #1a1a3e 0%, #2d1b69 100%); }
-.tt-thumb-2 { background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%); }
-.tt-thumb-3 { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); }
-.tt-thumb-4 { background: linear-gradient(135deg, #141e30 0%, #243b55 100%); }
-.tt-thumb-5 { background: linear-gradient(135deg, #23074d 0%, #cc5333 100%); }
 
-.tt-photo-badge {
-  position: absolute;
-  bottom: 8px; right: 8px;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  font-family: var(--f-mono);
-  font-size: 0.62rem;
-  color: var(--white);
-  background: rgba(0,0,0,0.55);
-  padding: 3px 7px;
-  letter-spacing: 0.06em;
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255,255,255,0.12);
-}
 
 .tt-overlay {
   position: absolute;
