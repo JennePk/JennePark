@@ -456,32 +456,22 @@ nav {
 .tt-thumb-4 { background: linear-gradient(135deg, #141e30 0%, #243b55 100%); }
 .tt-thumb-5 { background: linear-gradient(135deg, #23074d 0%, #cc5333 100%); }
 
-.tt-play-btn {
-  width: 52px; height: 52px;
-  background: rgba(255,255,255,0.15);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  backdrop-filter: blur(4px);
-  border: 1.5px solid rgba(255,255,255,0.3);
-  cursor: pointer;
-  transition: transform 0.2s, background 0.2s;
-  z-index: 2;
-}
-.tt-play-btn:hover { transform: scale(1.1); background: rgba(255,255,255,0.25); }
-.tt-play-btn svg { margin-left: 3px; }
-
-.tt-duration {
+.tt-photo-badge {
   position: absolute;
   bottom: 8px; right: 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
   font-family: var(--f-mono);
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   color: var(--white);
-  background: rgba(0,0,0,0.6);
-  padding: 2px 6px;
+  background: rgba(0,0,0,0.55);
+  padding: 3px 7px;
   letter-spacing: 0.06em;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,0.12);
 }
+
 .tt-overlay {
   position: absolute;
   inset: 0;
