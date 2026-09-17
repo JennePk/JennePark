@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Marketing Cat from Paris</title>
-  <meta name="description" content="Jenne Park — Creator & marketing cat based in Paris. Budget travel, Japan guides, solo travel tips on TikTok & blog." />
+  <meta name="description" content="Jenne Park — Creator & marketing cat based in Paris. Budget travel, Japan guides, solo travel tips & blog." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -20,7 +20,7 @@
   <nav>
     <div class="nav-logo">Jenne</div>
     <div class="nav-right">
-      <a href="blog.html" class="btn-ghost">Blog</a>
+<a href="blog.html" class="btn-ghost">Blog</a>
       <a href="#japan" class="nav-cta" id="cta-nav">Free Japan Ebook</a>
     </div>
   </nav>
@@ -30,12 +30,6 @@
     <div class="profile-main">
 
       <div class="profile-identity reveal">
-        <div class="profile-avatar-wrap">
-          <div class="profile-avatar">
-            <img src="images/avatar.png" alt="Jenne Park" />
-          </div>
-          <div class="profile-live-dot"></div>
-        </div>
         <div class="profile-badge">📍 Paris, France</div>
       </div>
 
@@ -63,16 +57,13 @@
           </div>
         </div>
         <div class="profile-ctas">
-          <a href="blog.html" class="btn-ghost" id="cta-blog-profile">Read the blog →</a>
+<a href="blog.html" class="btn-ghost" id="cta-blog-profile">Read the blog →</a>
         </div>
       </div>
 
     </div>
   </section>
-
-  <!-- TIKTOK -->
- 
-  <!-- BLOG -->
+<!-- BLOG -->
   <section class="blog-section" id="blog">
     <div class="blog-header reveal">
       <div class="section-eyebrow">I'm writing</div>
@@ -170,8 +161,7 @@
           <a href="Japan trip 7 nights on a budget.pdf" download class="btn-download-pdf" id="cta-download-pdf">
             ⬇️ Download — Japan on a Budget.pdf
           </a>
-         
-        </div>
+</div>
       </div>
 
     </div>
@@ -182,7 +172,7 @@
     <div class="footer-brand">Jenne</div>
     <div class="footer-links">
       <a href="#home">Home</a>
-      <a href="blog.html">Blog</a>
+<a href="blog.html">Blog</a>
       <a href="#japan">Ebook</a>
     </div>
     <div class="footer-copy">© 2026 Marketing Cat · Made with 💖</div>
@@ -199,41 +189,7 @@
       el.addEventListener('mouseenter', () => cur.classList.add('big'));
       el.addEventListener('mouseleave', () => cur.classList.remove('big'));
     });
-
-    // Carousel
-    const carousel = document.getElementById('ttCarousel');
-    const cards    = carousel.querySelectorAll('.tt-card');
-    const dotsWrap = document.getElementById('ttDots');
-    let idx = 0;
-    const visible = () => window.innerWidth < 700 ? 1 : window.innerWidth < 1000 ? 2 : 3;
-
-    function buildDots() {
-      dotsWrap.innerHTML = '';
-      const total = Math.ceil(cards.length / visible());
-      for (let i = 0; i < total; i++) {
-        const d = document.createElement('button');
-        d.className = 'carousel-dot' + (i === 0 ? ' active' : '');
-        d.setAttribute('aria-label', 'Slide ' + (i + 1));
-        d.addEventListener('click', () => goTo(i));
-        dotsWrap.appendChild(d);
-      }
-    }
-
-    function goTo(n) {
-      const total = Math.ceil(cards.length / visible());
-      idx = (n + total) % total;
-      carousel.style.transform = `translateX(-${idx * (cards[0].offsetWidth + 16) * visible()}px)`;
-      dotsWrap.querySelectorAll('.carousel-dot').forEach((d, i) => d.classList.toggle('active', i === idx));
-    }
-
-    document.getElementById('ttPrev').addEventListener('click', () => goTo(idx - 1));
-    document.getElementById('ttNext').addEventListener('click', () => goTo(idx + 1));
-    buildDots();
-    window.addEventListener('resize', () => { buildDots(); goTo(0); });
-
-    let startX = 0;
-    carousel.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
-    carousel.addEventListener('touchend',   e => {
+carousel.addEventListener('touchend',   e => {
       const d = startX - e.changedTouches[0].clientX;
       if (Math.abs(d) > 40) goTo(idx + (d > 0 ? 1 : -1));
     });
